@@ -1,18 +1,13 @@
-function area (lado1, lado2){
-    let area= lado1 * lado2;
-    return area;
-}
-
 addEventListener("DOMContentLoaded", (e) => {
     let boton = document.querySelector("#form");
     boton.addEventListener("submit", (e) => {
         e.preventDefault();
-        let presion = document.querySelector("#presion").value;
-        let temp = document.querySelector("#temp").value;
-        if (presion>200 || temp>100){
-            alert("CORRAAAAAAAAAAAAAAAAAAN")
+        let pago = document.querySelector("#pago").value;
+        if (pago>130000){
+            let total = pago - (pago*0.15);
+            document.querySelector("#total").innerHTML = `El total a pagar es de ${total} y se le aplico un descuento del 15%`;
         } else{
-            alert("Normal")
+            document.querySelector("#total").innerHTML = `El total a pagar es de ${pago}`;
         }
     })
 })
