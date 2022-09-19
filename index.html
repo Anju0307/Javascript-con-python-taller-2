@@ -13,9 +13,15 @@
 <body>
     <div>
         <form id="form">
-            <h1>Pago en un restaurante</h1>
-            <h2>Total a pagar</h2>
-            <input id="pago" type="number" required>
+            <h1>Pago en una empresa</h1>
+            <h2>Cargo de la empresa</h2>
+            <select name="select" id="dato" class="dato">
+                <option value="value1" disabled selected>Selecciona una opcion</option>
+                <option value="Planta">Planta</option>
+                <option value="Administrativo">Administrativo</option>
+            </select>
+            <h2>Horas trabajadas</h2>
+            <input id="horas" type="number" required>
             <h2 id="total"></h2>
             <input id="calcular" type="submit" value="Calcular">
         </form>
