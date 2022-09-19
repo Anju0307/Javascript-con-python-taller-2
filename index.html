@@ -11,19 +11,29 @@
 </head>
 
 <body>
-    <form id="form">
-        <h1>Calcular cual de los tres numero es mayor</h1>
-        <h2>Numero 1</h2>
-        <input id="numero1" type="number" required>
-        <h2>Numero 2</h2>
-        <input id="numero2" type="number" required>
-        <h2>Numero 3</h2>
-        <input id="numero3" type="number" required>
-        <input id="calcular" type="submit" value="Calcular">
-        <h2 id="mayor"></h2>
-        <h2 id="menor"></h2>
-        <h2 id="iguales"></h2>
-    </form>
+    <div>
+        <h1>Calcular area de una figura geometrica</h1>
+        <select name="select" id="dato" class="dato">
+            <option value="value1" disabled selected>Selecciona una opcion</option>
+            <option value="Triangulo">Triangulo</option>
+            <option value="Circulo">Circulo</option>
+        </select>
+        <form id="formTriangulo" class="formTriangulo">
+            <h1>Ingrese la base</h1>
+            <input type="number" id="base" required>
+            <h1>Ingrese la altura</h1>
+            <input type="number" id="altura" required>
+        </form>
+        <form id="formCirculo" class="formCirculo">
+            <h1>Ingrese el radio</h1>
+            <input type="number" id="radio" required>
+        </form>
+        <form id="area" class="area">
+            <h1>El resultado es:</h1>
+            <h1 id="res" class="res"></h1>
+            <input value="Calcular" type="submit" class="calcular">
+        </form>
+    </div>
 </body>
 
 </html>

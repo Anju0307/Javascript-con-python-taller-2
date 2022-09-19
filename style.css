@@ -5,30 +5,26 @@
     padding: 0;
     color: black;
     box-sizing: border-box;
+    text-align: center;
 }
-form{
-    padding: 10px;
+div{
+    background: orange;
+    width: 50%;
     margin: auto;
-    border: none;
-    height: 30%;
-    width: 40%;
-    background: plum;
     border-radius: 5px;
 }
-form h1{
-    color: purple;
-    
-}
-form h2{
-    margin: 20px 10px 0 10px;
+h1{
+    text-align: center;
+    margin-top: 20px;
 }
 input{
-    font-family: fantasy;
-    font-size: large;
-    margin: 20px 10px;
     padding: 10px;
-    width: 90%;
+    width: 80%;
+    border: 2px solid black;
 }
-.res{
-    margin-bottom: 10px;
+.formTriangulo{
+    display: none;
+}
+.formCirculo{
+    display: none;
 }

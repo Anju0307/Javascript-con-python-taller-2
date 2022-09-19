@@ -1,43 +1,38 @@
-function mayor(numero1,numero2,numero3){
-    /* Limpiar h1 */
-    document.querySelector("#mayor").innerHTML="";
-    document.querySelector("#menor").innerHTML="";
-    document.querySelector("#iguales").innerHTML="";
-    if (numero1>numero2 && numero2 >=numero3){
-        document.querySelector("#mayor").innerHTML= "El numero mayor es "+numero1;
-        if (numero2>numero3){
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero2;
-        } else{
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero3;
-        }
+function comprobar(seleccionado){
+    if (seleccionado == "Triangulo") {
+        document.querySelector("#formTriangulo").style.display = 'block';
 
-    } else if (numero2>numero1 && numero2 >=numero3){
-        document.querySelector("#mayor").innerHTML= "El numero mayor es "+numero2;
-        if (numero1>numero3){
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero3;
-        } else{
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero1;
-        }
-    } else if (numero3>numero1 && numero3 >=numero2){
-        document.querySelector("#mayor").innerHTML= "El numero mayor es "+numero3;
-        if (numero1>numero2){
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero2;
-        } else{
-            document.querySelector("#menor").innerHTML= "El numero menor es "+numero1;
-        }
-    } else {
-        document.querySelector("#iguales").innerHTML= "Todos los numeros son iguales "+numero1;
+    } else{
+        document.querySelector("#formCirculo").style.display = 'block';
     }
-
 }
-addEventListener("DOMContentLoaded", (e)=>{
-    let calcular = document.querySelector("#form");
-    calcular.addEventListener("submit", (e)=>{
-        e.preventDefault();
-        let numero1 = document.querySelector("#numero1").value;
-        let numero2= document.querySelector("#numero2").value;
-        let numero3 = document.querySelector("#numero3").value;
-        mayor(numero1,numero2,numero3); 
+
+let seleccionado;
+addEventListener("DOMContentLoaded", (e) => {
+    let dato = document.querySelector("#dato");
+    dato.addEventListener("change", (e) => {
+        document.querySelector("#formTriangulo").style.display = 'none';
+        document.querySelector("#formCirculo").style.display = 'none';
+        seleccionado = dato.value;
+        comprobar(seleccionado);
     })
-    
+})
+addEventListener("DOMContentLoaded", (e) => {
+    let area = document.querySelector("#area");
+    area.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (seleccionado=="Triangulo"){
+            let base = document.querySelector("#base").value;
+            let altura = document.querySelector("#altura").value;
+            let area = (base*altura)/2;
+            document.querySelector("#res").innerHTML = area;
+
+        } else if (seleccionado== "Circulo"){
+            let radio = document.querySelector("#radio").value;
+            let area = Math.PI * radio * radio;
+            document.querySelector("#res").innerHTML = area;
+        } else{
+            alert("Debes seleccionar una figura!!")
+        }
+    })
 })
