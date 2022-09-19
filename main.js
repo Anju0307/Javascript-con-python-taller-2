@@ -7,13 +7,12 @@ addEventListener("DOMContentLoaded", (e) => {
     let boton = document.querySelector("#form");
     boton.addEventListener("submit", (e) => {
         e.preventDefault();
-        let lado1 = document.querySelector("#lado1").value;
-        let lado2 = document.querySelector("#lado2").value;
-        if (lado1<=0 || lado2<=0){
-            alert("No puedes ingresar lados negativos subnormal");
-        } else {
-            let res =area(lado1,lado2);
-            document.querySelector("#area").innerHTML = res;
+        let presion = document.querySelector("#presion").value;
+        let temp = document.querySelector("#temp").value;
+        if (presion>200 || temp>100){
+            alert("CORRAAAAAAAAAAAAAAAAAAN")
+        } else{
+            alert("Normal")
         }
     })
 })
