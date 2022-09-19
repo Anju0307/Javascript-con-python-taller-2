@@ -1,38 +1,19 @@
-function comprobar(seleccionado){
-    if (seleccionado == "Triangulo") {
-        document.querySelector("#formTriangulo").style.display = 'block';
-
-    } else{
-        document.querySelector("#formCirculo").style.display = 'block';
-    }
+function area (lado1, lado2){
+    let area= lado1 * lado2;
+    return area;
 }
 
-let seleccionado;
 addEventListener("DOMContentLoaded", (e) => {
-    let dato = document.querySelector("#dato");
-    dato.addEventListener("change", (e) => {
-        document.querySelector("#formTriangulo").style.display = 'none';
-        document.querySelector("#formCirculo").style.display = 'none';
-        seleccionado = dato.value;
-        comprobar(seleccionado);
-    })
-})
-addEventListener("DOMContentLoaded", (e) => {
-    let area = document.querySelector("#area");
-    area.addEventListener("submit", (e) => {
+    let boton = document.querySelector("#form");
+    boton.addEventListener("submit", (e) => {
         e.preventDefault();
-        if (seleccionado=="Triangulo"){
-            let base = document.querySelector("#base").value;
-            let altura = document.querySelector("#altura").value;
-            let area = (base*altura)/2;
-            document.querySelector("#res").innerHTML = area;
-
-        } else if (seleccionado== "Circulo"){
-            let radio = document.querySelector("#radio").value;
-            let area = Math.PI * radio * radio;
-            document.querySelector("#res").innerHTML = area;
-        } else{
-            alert("Debes seleccionar una figura!!")
+        let lado1 = document.querySelector("#lado1").value;
+        let lado2 = document.querySelector("#lado2").value;
+        if (lado1<=0 || lado2<=0){
+            alert("No puedes ingresar lados negativos subnormal");
+        } else {
+            let res =area(lado1,lado2);
+            document.querySelector("#area").innerHTML = res;
         }
     })
 })
